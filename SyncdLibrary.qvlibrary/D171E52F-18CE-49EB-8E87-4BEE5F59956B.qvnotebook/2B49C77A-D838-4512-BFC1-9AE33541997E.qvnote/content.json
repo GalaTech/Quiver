@@ -1,0 +1,9 @@
+{
+  "title": "Engineering Overview",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "###Major backend engineering parts of the application\n---\n* social feed\n* coredata\n* networking stack\n* color themes\n* calendar\n* parse wrapper\n* audio controller\n* tabbar controller\n* animations"
+    }
+  ]
+}
