@@ -1,0 +1,37 @@
+{
+  "title": "Engineering: Social Feed",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "The social feed will contain three social networks inside of it all referencing a single profile/account. It will utilize Facebook, Instagram, and Twitter. It will reference the Y.A. account on each one of those networks. "
+    },
+    {
+      "type": "markdown",
+      "data": "___\nI am going to use MVVM for this problem.\n\nThe View Model will perform all of the networking tasks (networking tasks will be external classes, but this view model will call those classes/databases). Once networking tasks are completed I will have an array of items. The items in this array will be a custom struct that holds onto the type(enum-fb, instagram, twitter), and item values(image urls, post text, date posted, posted by user, etc.). Once all of this networking/parsing is completed the view controller will be alerted.\n\nI think that the view model should have an array for each network. Each one of those arrays will only contain items for that network. Then the combined array can just be a union of those arrays based on the upload date. This will also make it very easy to know when a specific network has been updated and provides a simple way to filter results. \n\nThe network requests are going to be run through an NSOperation queue. I will have an operation for each network type. That way I can pause, cancel, etc. and have more control over the queue. I will also know when the entire queue has been completed, which will provide a simple way to know when I need to refresh the unioned array. "
+    },
+    {
+      "type": "markdown",
+      "data": "The view controller will be extremely simple and will just be observing the items array from the view model. Once that array is updated it will reload the collection/table view. In cellForItemAtIndexPath: it will retrieve a single item from the view model array. It can than perform a switch based on the type and configure the cell for a fb, instagram, or twitter cell. Each cell will be self contained and I'll use sd_webImage to perform image requests so that I don't have to worry about reuse. "
+    },
+    {
+      "type": "markdown",
+      "data": "The collection will have 3 kinds of cells: fb, instagram, and twitter.\n\nFacebook: image (if applicable), post text (if applicable), poster, date uploaded\nInstagram: image, poster, date uploaded, title\ntwitter: Image (if applicable), post text (if applicable), poster, date uploaded"
+    },
+    {
+      "type": "markdown",
+      "data": "This view controller will also have a filter button that allows to only display the specified networks. This can be accomplished by letting the view model handle the filtering. When the filter is activated the view model will filter the array of current results. Then the view controller will have access to that filtered results array. "
+    },
+    {
+      "type": "markdown",
+      "data": "There will be lazy loading going down the page in the same way I did it on Stringr."
+    },
+    {
+      "type": "markdown",
+      "data": "Possibly have automatic post refresh. I'll definitely have an update engine, but it might be possible that they sdk's have an ability to provide requests when new items appear."
+    },
+    {
+      "type": "markdown",
+      "data": "I will need some kind of way to repost the items in this feed or to add to that feed. It means I will need to have facebook, instagram, and twitter authentication to provide POST capabilities. "
+    }
+  ]
+}
