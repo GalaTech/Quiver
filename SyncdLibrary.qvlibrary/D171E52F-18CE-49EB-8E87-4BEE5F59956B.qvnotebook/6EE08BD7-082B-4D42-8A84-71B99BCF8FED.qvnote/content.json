@@ -1,0 +1,33 @@
+{
+  "title": "App Overview",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "The applicaiton will be written in Swift using Parse and Core Data.\n\nI'm planning on setting up the application using a similar implementation to what I did for Stringr. I'm going to have an application controller that will be responsible for holding certain flags like `isFirstRun` and `isLatestAppVersion`. *Reference conversation with Grant* The application controller can also handle changing the root view controller inside of the window and setting up the initial dashboard. The application controller will have a reference to the current root, which by default will be the dashboard view controller. "
+    },
+    {
+      "type": "markdown",
+      "data": "The dashboard view controller will be the root view controller and will be interacted with directly for changing tabs and customization. Initialization for the priamry dashboard items will be setup here. The dashboard will contain 4 tabs: Social feed, Events, Thursday section, Link to RR website."
+    },
+    {
+      "type": "markdown",
+      "data": "For the social feed reference the Engineering: Social Feed Note"
+    },
+    {
+      "type": "markdown",
+      "data": "Events will be a calendar of some sort with potentially a cooler design. Potentially add the ability to set a reminder for events via local notification or possibly add it to the ios calendar. Calendar items will be handled via parse."
+    },
+    {
+      "type": "markdown",
+      "data": "Thursday section will be a collection or table view of items. Each item will open up to a detail view of that Thursday and will display the podcasts, sermon notes, slides, verses, and song names. "
+    },
+    {
+      "type": "markdown",
+      "data": "There might also be a blog section that just contains posts."
+    },
+    {
+      "type": "markdown",
+      "data": "An autoupdate engine is not necessary in this app at a global level, but will most likely be utilized direclty inside of the social feed or event section directly. I'm thinking that I might create an object that each instance can create. They can pass it some values such as autorefresh consistency and potentially a router object for what needs to be refreshed."
+    }
+  ]
+}

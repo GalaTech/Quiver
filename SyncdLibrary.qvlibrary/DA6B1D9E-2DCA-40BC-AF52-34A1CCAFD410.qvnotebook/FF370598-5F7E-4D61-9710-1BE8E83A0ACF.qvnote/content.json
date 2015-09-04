@@ -1,0 +1,9 @@
+{
+  "title": "SessionM Implementation Notes",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "Implementation\n* Setup SessionM portal\n* Add most recent SDK to project.\n* Perform initial setup to connect app to SessionM account using correct API key. \n* Start SessionM once app is loaded.\n* Add a SessionM achievement call anywhere in the app that corresponds to an apporpriate achievement action. \n\nChallenges\n* Customer support was very communicative and helpful, but the product itself was just a disaster. \n* Had to fix multiple SDK related bugs locally in the app. \n  * Spent a lot of time attempting to figure out what these bugs were. We needed to narrow it down to make sure that it was a bug with the SDK rather than the app itself. \n* There were different bugs with all of the different versions of their SDK. In several cases we tried updating the SDK to their newest version, but that would break the implementation entirely. That would then required us to revert back to a previous version, which still had other issues, but managed to \"work\". \n* The way that their SDK displays views and other achievement banners conflicted with certain views inside of PGA. We had to change our implementation in order for their banners to display properly. \n* They also had issues with their SessionM portal going down, so certain functionality related to their SDK would sporadically not work. "
+    }
+  ]
+}
