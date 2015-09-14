@@ -1,0 +1,9 @@
+{
+  "title": "TrueBlue Manager",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "###Public Functionality\n---\n* loyaltyType - Enum:guest, mosaic, trueblue\n* isGuest - Bool\n* hasTrueBlueProfileKey - Bool\n* name - (First, Middle, Last) tuple\n* trueBlueNumber \n* trueBlueBalance\n* trueBlue \n* address - (addressLine, CityName, State, PostalCode, Country) tuple\n* contact - (email, phone)\n\nloginWithCredentials - either userID/pass or trueBlue number\nenrollWithTraveler - takes a traveler\nupdateProfile - takes a Traveler\npossibility to update each field of a profile so that we don't need to pass an entire traveler every time we update. \n\nAll of these enrollment/login functions will need to have trailing closures that can pass their profile back with them. I suppose that it'd be more useful to pass the NSManagedObject back instead.\n\n---\n"
+    }
+  ]
+}
